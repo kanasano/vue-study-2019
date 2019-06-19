@@ -1,0 +1,37 @@
+    <!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js App</title>
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+<!-- テキストのデータバインディング -->
+<!-- 基本 -->
+    <p>今夜は{{ message }}よ</p>
+    <div class="separator"></div>
+
+<!-- ネストされたデータを定義 -->
+    <p>もっとも長い英単語は{{ menu.value }}で、アルファベットで{{ menu.value.length }}字です。</p>
+
+    <p>Q. あなたの風邪はどこから？</p>
+    <p>A. わたしは{{ list[2] }}から</p>
+    <div class="separator"></div>
+
+<!-- データの更新 -->
+    <p>ひつじが<span class="counter">{{ count }}</span>匹 </p>
+    <button v-on:click="increment" class="btn">ひつじを数える</button>
+    <div class="separator"></div>
+
+    <!-- クラスとスタイルのデータバインド   -->
+    <p v-bind:class="{ 'is-active': !isActive }" class="coloring-box">動的なクラス</p>
+    <p v-bind:style="{ backgroundColor: bgColor }" class="coloring-box">静的なスタイル</p>
+    <button v-on:click="isActive=!isActive" class="btn">色を塗る</button>
+
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
